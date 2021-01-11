@@ -3,18 +3,21 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix UI Content Team
  */
-import { CSSProperties } from "react";
+import { ComponentType, CSSProperties } from "react";
+import { ListValue, ListWidgetValue } from "mendix";
 
 export interface SimpleListWidgetContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex: number;
-    sampleText: string;
+    ds: ListValue;
+    content: ListWidgetValue;
 }
 
 export interface SimpleListWidgetPreviewProps {
     class: string;
     style: string;
-    sampleText: string;
+    ds: {} | null;
+    content: { widgetCount: number; renderer: ComponentType };
 }

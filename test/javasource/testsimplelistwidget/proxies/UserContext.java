@@ -20,34 +20,9 @@ public class UserContext
 	 */
 	public enum MemberNames
 	{
-		DataChangedDate("DataChangedDate"),
 		ContextGuid("ContextGuid"),
-		AxisTypeX("AxisTypeX"),
-		AxisTypeY("AxisTypeY"),
-		OnClickLongX("OnClickLongX"),
-		OnClickStringX("OnClickStringX"),
-		OnClickLongY("OnClickLongY"),
-		OnClickStringY("OnClickStringY"),
-		Region("Region"),
-		LabelX("LabelX"),
-		LabelY("LabelY"),
-		AverageQuantity("AverageQuantity"),
-		AverageValue("AverageValue"),
-		TotalQuantity("TotalQuantity"),
-		TotalValue("TotalValue"),
-		RedLimit("RedLimit"),
-		DefaultLimit("DefaultLimit"),
-		GreenLimit("GreenLimit"),
-		RedLimitDate("RedLimitDate"),
-		DefaultLimitDate("DefaultLimitDate"),
-		ExportData("ExportData"),
-		ExportFilename("ExportFilename"),
-		RotationDegree("RotationDegree"),
-		CellWidth("CellWidth"),
-		HeaderHeight("HeaderHeight"),
-		HeaderLabelLeft("HeaderLabelLeft"),
-		HeaderLabelBottom("HeaderLabelBottom"),
-		GeneratedCss("GeneratedCss"),
+		FromDate("FromDate"),
+		ToDate("ToDate"),
 		UserContext_SalesRepresentative("TestSimpleListWidget.UserContext_SalesRepresentative"),
 		UserContext_Location("TestSimpleListWidget.UserContext_Location"),
 		UserContext_Customer("TestSimpleListWidget.UserContext_Customer"),
@@ -149,42 +124,6 @@ public class UserContext
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
-	 * @return value of DataChangedDate
-	 */
-	public final java.util.Date getDataChangedDate()
-	{
-		return getDataChangedDate(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of DataChangedDate
-	 */
-	public final java.util.Date getDataChangedDate(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.util.Date) getMendixObject().getValue(context, MemberNames.DataChangedDate.toString());
-	}
-
-	/**
-	 * Set value of DataChangedDate
-	 * @param datachangeddate
-	 */
-	public final void setDataChangedDate(java.util.Date datachangeddate)
-	{
-		setDataChangedDate(getContext(), datachangeddate);
-	}
-
-	/**
-	 * Set value of DataChangedDate
-	 * @param context
-	 * @param datachangeddate
-	 */
-	public final void setDataChangedDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date datachangeddate)
-	{
-		getMendixObject().setValue(context, MemberNames.DataChangedDate.toString(), datachangeddate);
-	}
-
-	/**
 	 * @return value of ContextGuid
 	 */
 	public final java.lang.Long getContextGuid()
@@ -221,963 +160,75 @@ public class UserContext
 	}
 
 	/**
-	 * Set value of AxisTypeX
-	 * @param axistypex
+	 * @return value of FromDate
 	 */
-	public final testsimplelistwidget.proxies.AxisType getAxisTypeX()
+	public final java.util.Date getFromDate()
 	{
-		return getAxisTypeX(getContext());
+		return getFromDate(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of AxisTypeX
+	 * @return value of FromDate
 	 */
-	public final testsimplelistwidget.proxies.AxisType getAxisTypeX(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.util.Date getFromDate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Object obj = getMendixObject().getValue(context, MemberNames.AxisTypeX.toString());
-		if (obj == null)
-			return null;
-
-		return testsimplelistwidget.proxies.AxisType.valueOf((java.lang.String) obj);
+		return (java.util.Date) getMendixObject().getValue(context, MemberNames.FromDate.toString());
 	}
 
 	/**
-	 * Set value of AxisTypeX
-	 * @param axistypex
+	 * Set value of FromDate
+	 * @param fromdate
 	 */
-	public final void setAxisTypeX(testsimplelistwidget.proxies.AxisType axistypex)
+	public final void setFromDate(java.util.Date fromdate)
 	{
-		setAxisTypeX(getContext(), axistypex);
+		setFromDate(getContext(), fromdate);
 	}
 
 	/**
-	 * Set value of AxisTypeX
+	 * Set value of FromDate
 	 * @param context
-	 * @param axistypex
+	 * @param fromdate
 	 */
-	public final void setAxisTypeX(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.AxisType axistypex)
+	public final void setFromDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date fromdate)
 	{
-		if (axistypex != null)
-			getMendixObject().setValue(context, MemberNames.AxisTypeX.toString(), axistypex.toString());
-		else
-			getMendixObject().setValue(context, MemberNames.AxisTypeX.toString(), null);
+		getMendixObject().setValue(context, MemberNames.FromDate.toString(), fromdate);
 	}
 
 	/**
-	 * Set value of AxisTypeY
-	 * @param axistypey
+	 * @return value of ToDate
 	 */
-	public final testsimplelistwidget.proxies.AxisType getAxisTypeY()
+	public final java.util.Date getToDate()
 	{
-		return getAxisTypeY(getContext());
+		return getToDate(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of AxisTypeY
+	 * @return value of ToDate
 	 */
-	public final testsimplelistwidget.proxies.AxisType getAxisTypeY(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.util.Date getToDate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Object obj = getMendixObject().getValue(context, MemberNames.AxisTypeY.toString());
-		if (obj == null)
-			return null;
-
-		return testsimplelistwidget.proxies.AxisType.valueOf((java.lang.String) obj);
+		return (java.util.Date) getMendixObject().getValue(context, MemberNames.ToDate.toString());
 	}
 
 	/**
-	 * Set value of AxisTypeY
-	 * @param axistypey
+	 * Set value of ToDate
+	 * @param todate
 	 */
-	public final void setAxisTypeY(testsimplelistwidget.proxies.AxisType axistypey)
+	public final void setToDate(java.util.Date todate)
 	{
-		setAxisTypeY(getContext(), axistypey);
+		setToDate(getContext(), todate);
 	}
 
 	/**
-	 * Set value of AxisTypeY
+	 * Set value of ToDate
 	 * @param context
-	 * @param axistypey
+	 * @param todate
 	 */
-	public final void setAxisTypeY(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.AxisType axistypey)
+	public final void setToDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date todate)
 	{
-		if (axistypey != null)
-			getMendixObject().setValue(context, MemberNames.AxisTypeY.toString(), axistypey.toString());
-		else
-			getMendixObject().setValue(context, MemberNames.AxisTypeY.toString(), null);
-	}
-
-	/**
-	 * @return value of OnClickLongX
-	 */
-	public final java.lang.Long getOnClickLongX()
-	{
-		return getOnClickLongX(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of OnClickLongX
-	 */
-	public final java.lang.Long getOnClickLongX(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.OnClickLongX.toString());
-	}
-
-	/**
-	 * Set value of OnClickLongX
-	 * @param onclicklongx
-	 */
-	public final void setOnClickLongX(java.lang.Long onclicklongx)
-	{
-		setOnClickLongX(getContext(), onclicklongx);
-	}
-
-	/**
-	 * Set value of OnClickLongX
-	 * @param context
-	 * @param onclicklongx
-	 */
-	public final void setOnClickLongX(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long onclicklongx)
-	{
-		getMendixObject().setValue(context, MemberNames.OnClickLongX.toString(), onclicklongx);
-	}
-
-	/**
-	 * @return value of OnClickStringX
-	 */
-	public final java.lang.String getOnClickStringX()
-	{
-		return getOnClickStringX(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of OnClickStringX
-	 */
-	public final java.lang.String getOnClickStringX(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.OnClickStringX.toString());
-	}
-
-	/**
-	 * Set value of OnClickStringX
-	 * @param onclickstringx
-	 */
-	public final void setOnClickStringX(java.lang.String onclickstringx)
-	{
-		setOnClickStringX(getContext(), onclickstringx);
-	}
-
-	/**
-	 * Set value of OnClickStringX
-	 * @param context
-	 * @param onclickstringx
-	 */
-	public final void setOnClickStringX(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String onclickstringx)
-	{
-		getMendixObject().setValue(context, MemberNames.OnClickStringX.toString(), onclickstringx);
-	}
-
-	/**
-	 * @return value of OnClickLongY
-	 */
-	public final java.lang.Long getOnClickLongY()
-	{
-		return getOnClickLongY(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of OnClickLongY
-	 */
-	public final java.lang.Long getOnClickLongY(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.OnClickLongY.toString());
-	}
-
-	/**
-	 * Set value of OnClickLongY
-	 * @param onclicklongy
-	 */
-	public final void setOnClickLongY(java.lang.Long onclicklongy)
-	{
-		setOnClickLongY(getContext(), onclicklongy);
-	}
-
-	/**
-	 * Set value of OnClickLongY
-	 * @param context
-	 * @param onclicklongy
-	 */
-	public final void setOnClickLongY(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long onclicklongy)
-	{
-		getMendixObject().setValue(context, MemberNames.OnClickLongY.toString(), onclicklongy);
-	}
-
-	/**
-	 * @return value of OnClickStringY
-	 */
-	public final java.lang.String getOnClickStringY()
-	{
-		return getOnClickStringY(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of OnClickStringY
-	 */
-	public final java.lang.String getOnClickStringY(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.OnClickStringY.toString());
-	}
-
-	/**
-	 * Set value of OnClickStringY
-	 * @param onclickstringy
-	 */
-	public final void setOnClickStringY(java.lang.String onclickstringy)
-	{
-		setOnClickStringY(getContext(), onclickstringy);
-	}
-
-	/**
-	 * Set value of OnClickStringY
-	 * @param context
-	 * @param onclickstringy
-	 */
-	public final void setOnClickStringY(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String onclickstringy)
-	{
-		getMendixObject().setValue(context, MemberNames.OnClickStringY.toString(), onclickstringy);
-	}
-
-	/**
-	 * Set value of Region
-	 * @param region
-	 */
-	public final testsimplelistwidget.proxies.Region getRegion()
-	{
-		return getRegion(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of Region
-	 */
-	public final testsimplelistwidget.proxies.Region getRegion(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		Object obj = getMendixObject().getValue(context, MemberNames.Region.toString());
-		if (obj == null)
-			return null;
-
-		return testsimplelistwidget.proxies.Region.valueOf((java.lang.String) obj);
-	}
-
-	/**
-	 * Set value of Region
-	 * @param region
-	 */
-	public final void setRegion(testsimplelistwidget.proxies.Region region)
-	{
-		setRegion(getContext(), region);
-	}
-
-	/**
-	 * Set value of Region
-	 * @param context
-	 * @param region
-	 */
-	public final void setRegion(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.Region region)
-	{
-		if (region != null)
-			getMendixObject().setValue(context, MemberNames.Region.toString(), region.toString());
-		else
-			getMendixObject().setValue(context, MemberNames.Region.toString(), null);
-	}
-
-	/**
-	 * @return value of LabelX
-	 */
-	public final java.lang.String getLabelX()
-	{
-		return getLabelX(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of LabelX
-	 */
-	public final java.lang.String getLabelX(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.LabelX.toString());
-	}
-
-	/**
-	 * Set value of LabelX
-	 * @param labelx
-	 */
-	public final void setLabelX(java.lang.String labelx)
-	{
-		setLabelX(getContext(), labelx);
-	}
-
-	/**
-	 * Set value of LabelX
-	 * @param context
-	 * @param labelx
-	 */
-	public final void setLabelX(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String labelx)
-	{
-		getMendixObject().setValue(context, MemberNames.LabelX.toString(), labelx);
-	}
-
-	/**
-	 * @return value of LabelY
-	 */
-	public final java.lang.String getLabelY()
-	{
-		return getLabelY(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of LabelY
-	 */
-	public final java.lang.String getLabelY(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.LabelY.toString());
-	}
-
-	/**
-	 * Set value of LabelY
-	 * @param labely
-	 */
-	public final void setLabelY(java.lang.String labely)
-	{
-		setLabelY(getContext(), labely);
-	}
-
-	/**
-	 * Set value of LabelY
-	 * @param context
-	 * @param labely
-	 */
-	public final void setLabelY(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String labely)
-	{
-		getMendixObject().setValue(context, MemberNames.LabelY.toString(), labely);
-	}
-
-	/**
-	 * @return value of AverageQuantity
-	 */
-	public final java.math.BigDecimal getAverageQuantity()
-	{
-		return getAverageQuantity(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of AverageQuantity
-	 */
-	public final java.math.BigDecimal getAverageQuantity(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.AverageQuantity.toString());
-	}
-
-	/**
-	 * Set value of AverageQuantity
-	 * @param averagequantity
-	 */
-	public final void setAverageQuantity(java.math.BigDecimal averagequantity)
-	{
-		setAverageQuantity(getContext(), averagequantity);
-	}
-
-	/**
-	 * Set value of AverageQuantity
-	 * @param context
-	 * @param averagequantity
-	 */
-	public final void setAverageQuantity(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal averagequantity)
-	{
-		getMendixObject().setValue(context, MemberNames.AverageQuantity.toString(), averagequantity);
-	}
-
-	/**
-	 * @return value of AverageValue
-	 */
-	public final java.math.BigDecimal getAverageValue()
-	{
-		return getAverageValue(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of AverageValue
-	 */
-	public final java.math.BigDecimal getAverageValue(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.AverageValue.toString());
-	}
-
-	/**
-	 * Set value of AverageValue
-	 * @param averagevalue
-	 */
-	public final void setAverageValue(java.math.BigDecimal averagevalue)
-	{
-		setAverageValue(getContext(), averagevalue);
-	}
-
-	/**
-	 * Set value of AverageValue
-	 * @param context
-	 * @param averagevalue
-	 */
-	public final void setAverageValue(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal averagevalue)
-	{
-		getMendixObject().setValue(context, MemberNames.AverageValue.toString(), averagevalue);
-	}
-
-	/**
-	 * @return value of TotalQuantity
-	 */
-	public final java.lang.Integer getTotalQuantity()
-	{
-		return getTotalQuantity(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of TotalQuantity
-	 */
-	public final java.lang.Integer getTotalQuantity(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.TotalQuantity.toString());
-	}
-
-	/**
-	 * Set value of TotalQuantity
-	 * @param totalquantity
-	 */
-	public final void setTotalQuantity(java.lang.Integer totalquantity)
-	{
-		setTotalQuantity(getContext(), totalquantity);
-	}
-
-	/**
-	 * Set value of TotalQuantity
-	 * @param context
-	 * @param totalquantity
-	 */
-	public final void setTotalQuantity(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer totalquantity)
-	{
-		getMendixObject().setValue(context, MemberNames.TotalQuantity.toString(), totalquantity);
-	}
-
-	/**
-	 * @return value of TotalValue
-	 */
-	public final java.math.BigDecimal getTotalValue()
-	{
-		return getTotalValue(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of TotalValue
-	 */
-	public final java.math.BigDecimal getTotalValue(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.TotalValue.toString());
-	}
-
-	/**
-	 * Set value of TotalValue
-	 * @param totalvalue
-	 */
-	public final void setTotalValue(java.math.BigDecimal totalvalue)
-	{
-		setTotalValue(getContext(), totalvalue);
-	}
-
-	/**
-	 * Set value of TotalValue
-	 * @param context
-	 * @param totalvalue
-	 */
-	public final void setTotalValue(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal totalvalue)
-	{
-		getMendixObject().setValue(context, MemberNames.TotalValue.toString(), totalvalue);
-	}
-
-	/**
-	 * @return value of RedLimit
-	 */
-	public final java.lang.Integer getRedLimit()
-	{
-		return getRedLimit(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of RedLimit
-	 */
-	public final java.lang.Integer getRedLimit(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.RedLimit.toString());
-	}
-
-	/**
-	 * Set value of RedLimit
-	 * @param redlimit
-	 */
-	public final void setRedLimit(java.lang.Integer redlimit)
-	{
-		setRedLimit(getContext(), redlimit);
-	}
-
-	/**
-	 * Set value of RedLimit
-	 * @param context
-	 * @param redlimit
-	 */
-	public final void setRedLimit(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer redlimit)
-	{
-		getMendixObject().setValue(context, MemberNames.RedLimit.toString(), redlimit);
-	}
-
-	/**
-	 * @return value of DefaultLimit
-	 */
-	public final java.lang.Integer getDefaultLimit()
-	{
-		return getDefaultLimit(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of DefaultLimit
-	 */
-	public final java.lang.Integer getDefaultLimit(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.DefaultLimit.toString());
-	}
-
-	/**
-	 * Set value of DefaultLimit
-	 * @param defaultlimit
-	 */
-	public final void setDefaultLimit(java.lang.Integer defaultlimit)
-	{
-		setDefaultLimit(getContext(), defaultlimit);
-	}
-
-	/**
-	 * Set value of DefaultLimit
-	 * @param context
-	 * @param defaultlimit
-	 */
-	public final void setDefaultLimit(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer defaultlimit)
-	{
-		getMendixObject().setValue(context, MemberNames.DefaultLimit.toString(), defaultlimit);
-	}
-
-	/**
-	 * @return value of GreenLimit
-	 */
-	public final java.lang.Integer getGreenLimit()
-	{
-		return getGreenLimit(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of GreenLimit
-	 */
-	public final java.lang.Integer getGreenLimit(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.GreenLimit.toString());
-	}
-
-	/**
-	 * Set value of GreenLimit
-	 * @param greenlimit
-	 */
-	public final void setGreenLimit(java.lang.Integer greenlimit)
-	{
-		setGreenLimit(getContext(), greenlimit);
-	}
-
-	/**
-	 * Set value of GreenLimit
-	 * @param context
-	 * @param greenlimit
-	 */
-	public final void setGreenLimit(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer greenlimit)
-	{
-		getMendixObject().setValue(context, MemberNames.GreenLimit.toString(), greenlimit);
-	}
-
-	/**
-	 * @return value of RedLimitDate
-	 */
-	public final java.util.Date getRedLimitDate()
-	{
-		return getRedLimitDate(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of RedLimitDate
-	 */
-	public final java.util.Date getRedLimitDate(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.util.Date) getMendixObject().getValue(context, MemberNames.RedLimitDate.toString());
-	}
-
-	/**
-	 * Set value of RedLimitDate
-	 * @param redlimitdate
-	 */
-	public final void setRedLimitDate(java.util.Date redlimitdate)
-	{
-		setRedLimitDate(getContext(), redlimitdate);
-	}
-
-	/**
-	 * Set value of RedLimitDate
-	 * @param context
-	 * @param redlimitdate
-	 */
-	public final void setRedLimitDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date redlimitdate)
-	{
-		getMendixObject().setValue(context, MemberNames.RedLimitDate.toString(), redlimitdate);
-	}
-
-	/**
-	 * @return value of DefaultLimitDate
-	 */
-	public final java.util.Date getDefaultLimitDate()
-	{
-		return getDefaultLimitDate(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of DefaultLimitDate
-	 */
-	public final java.util.Date getDefaultLimitDate(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.util.Date) getMendixObject().getValue(context, MemberNames.DefaultLimitDate.toString());
-	}
-
-	/**
-	 * Set value of DefaultLimitDate
-	 * @param defaultlimitdate
-	 */
-	public final void setDefaultLimitDate(java.util.Date defaultlimitdate)
-	{
-		setDefaultLimitDate(getContext(), defaultlimitdate);
-	}
-
-	/**
-	 * Set value of DefaultLimitDate
-	 * @param context
-	 * @param defaultlimitdate
-	 */
-	public final void setDefaultLimitDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date defaultlimitdate)
-	{
-		getMendixObject().setValue(context, MemberNames.DefaultLimitDate.toString(), defaultlimitdate);
-	}
-
-	/**
-	 * @return value of ExportData
-	 */
-	public final java.lang.String getExportData()
-	{
-		return getExportData(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of ExportData
-	 */
-	public final java.lang.String getExportData(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ExportData.toString());
-	}
-
-	/**
-	 * Set value of ExportData
-	 * @param exportdata
-	 */
-	public final void setExportData(java.lang.String exportdata)
-	{
-		setExportData(getContext(), exportdata);
-	}
-
-	/**
-	 * Set value of ExportData
-	 * @param context
-	 * @param exportdata
-	 */
-	public final void setExportData(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String exportdata)
-	{
-		getMendixObject().setValue(context, MemberNames.ExportData.toString(), exportdata);
-	}
-
-	/**
-	 * @return value of ExportFilename
-	 */
-	public final java.lang.String getExportFilename()
-	{
-		return getExportFilename(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of ExportFilename
-	 */
-	public final java.lang.String getExportFilename(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ExportFilename.toString());
-	}
-
-	/**
-	 * Set value of ExportFilename
-	 * @param exportfilename
-	 */
-	public final void setExportFilename(java.lang.String exportfilename)
-	{
-		setExportFilename(getContext(), exportfilename);
-	}
-
-	/**
-	 * Set value of ExportFilename
-	 * @param context
-	 * @param exportfilename
-	 */
-	public final void setExportFilename(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String exportfilename)
-	{
-		getMendixObject().setValue(context, MemberNames.ExportFilename.toString(), exportfilename);
-	}
-
-	/**
-	 * @return value of RotationDegree
-	 */
-	public final java.lang.Integer getRotationDegree()
-	{
-		return getRotationDegree(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of RotationDegree
-	 */
-	public final java.lang.Integer getRotationDegree(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.RotationDegree.toString());
-	}
-
-	/**
-	 * Set value of RotationDegree
-	 * @param rotationdegree
-	 */
-	public final void setRotationDegree(java.lang.Integer rotationdegree)
-	{
-		setRotationDegree(getContext(), rotationdegree);
-	}
-
-	/**
-	 * Set value of RotationDegree
-	 * @param context
-	 * @param rotationdegree
-	 */
-	public final void setRotationDegree(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer rotationdegree)
-	{
-		getMendixObject().setValue(context, MemberNames.RotationDegree.toString(), rotationdegree);
-	}
-
-	/**
-	 * @return value of CellWidth
-	 */
-	public final java.lang.Integer getCellWidth()
-	{
-		return getCellWidth(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of CellWidth
-	 */
-	public final java.lang.Integer getCellWidth(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.CellWidth.toString());
-	}
-
-	/**
-	 * Set value of CellWidth
-	 * @param cellwidth
-	 */
-	public final void setCellWidth(java.lang.Integer cellwidth)
-	{
-		setCellWidth(getContext(), cellwidth);
-	}
-
-	/**
-	 * Set value of CellWidth
-	 * @param context
-	 * @param cellwidth
-	 */
-	public final void setCellWidth(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer cellwidth)
-	{
-		getMendixObject().setValue(context, MemberNames.CellWidth.toString(), cellwidth);
-	}
-
-	/**
-	 * @return value of HeaderHeight
-	 */
-	public final java.lang.Integer getHeaderHeight()
-	{
-		return getHeaderHeight(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of HeaderHeight
-	 */
-	public final java.lang.Integer getHeaderHeight(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.HeaderHeight.toString());
-	}
-
-	/**
-	 * Set value of HeaderHeight
-	 * @param headerheight
-	 */
-	public final void setHeaderHeight(java.lang.Integer headerheight)
-	{
-		setHeaderHeight(getContext(), headerheight);
-	}
-
-	/**
-	 * Set value of HeaderHeight
-	 * @param context
-	 * @param headerheight
-	 */
-	public final void setHeaderHeight(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer headerheight)
-	{
-		getMendixObject().setValue(context, MemberNames.HeaderHeight.toString(), headerheight);
-	}
-
-	/**
-	 * @return value of HeaderLabelLeft
-	 */
-	public final java.lang.Integer getHeaderLabelLeft()
-	{
-		return getHeaderLabelLeft(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of HeaderLabelLeft
-	 */
-	public final java.lang.Integer getHeaderLabelLeft(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.HeaderLabelLeft.toString());
-	}
-
-	/**
-	 * Set value of HeaderLabelLeft
-	 * @param headerlabelleft
-	 */
-	public final void setHeaderLabelLeft(java.lang.Integer headerlabelleft)
-	{
-		setHeaderLabelLeft(getContext(), headerlabelleft);
-	}
-
-	/**
-	 * Set value of HeaderLabelLeft
-	 * @param context
-	 * @param headerlabelleft
-	 */
-	public final void setHeaderLabelLeft(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer headerlabelleft)
-	{
-		getMendixObject().setValue(context, MemberNames.HeaderLabelLeft.toString(), headerlabelleft);
-	}
-
-	/**
-	 * @return value of HeaderLabelBottom
-	 */
-	public final java.lang.Integer getHeaderLabelBottom()
-	{
-		return getHeaderLabelBottom(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of HeaderLabelBottom
-	 */
-	public final java.lang.Integer getHeaderLabelBottom(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.HeaderLabelBottom.toString());
-	}
-
-	/**
-	 * Set value of HeaderLabelBottom
-	 * @param headerlabelbottom
-	 */
-	public final void setHeaderLabelBottom(java.lang.Integer headerlabelbottom)
-	{
-		setHeaderLabelBottom(getContext(), headerlabelbottom);
-	}
-
-	/**
-	 * Set value of HeaderLabelBottom
-	 * @param context
-	 * @param headerlabelbottom
-	 */
-	public final void setHeaderLabelBottom(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer headerlabelbottom)
-	{
-		getMendixObject().setValue(context, MemberNames.HeaderLabelBottom.toString(), headerlabelbottom);
-	}
-
-	/**
-	 * @return value of GeneratedCss
-	 */
-	public final java.lang.String getGeneratedCss()
-	{
-		return getGeneratedCss(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of GeneratedCss
-	 */
-	public final java.lang.String getGeneratedCss(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (java.lang.String) getMendixObject().getValue(context, MemberNames.GeneratedCss.toString());
-	}
-
-	/**
-	 * Set value of GeneratedCss
-	 * @param generatedcss
-	 */
-	public final void setGeneratedCss(java.lang.String generatedcss)
-	{
-		setGeneratedCss(getContext(), generatedcss);
-	}
-
-	/**
-	 * Set value of GeneratedCss
-	 * @param context
-	 * @param generatedcss
-	 */
-	public final void setGeneratedCss(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String generatedcss)
-	{
-		getMendixObject().setValue(context, MemberNames.GeneratedCss.toString(), generatedcss);
+		getMendixObject().setValue(context, MemberNames.ToDate.toString(), todate);
 	}
 
 	/**
@@ -1355,7 +406,7 @@ public class UserContext
 	/**
 	 * @return value of UserContext_SalesOrder
 	 */
-	public final java.util.List<testsimplelistwidget.proxies.SalesOrder> getUserContext_SalesOrder() throws com.mendix.core.CoreException
+	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder() throws com.mendix.core.CoreException
 	{
 		return getUserContext_SalesOrder(getContext());
 	}
@@ -1364,15 +415,12 @@ public class UserContext
 	 * @param context
 	 * @return value of UserContext_SalesOrder
 	 */
-	@SuppressWarnings("unchecked")
-	public final java.util.List<testsimplelistwidget.proxies.SalesOrder> getUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		java.util.List<testsimplelistwidget.proxies.SalesOrder> result = new java.util.ArrayList<testsimplelistwidget.proxies.SalesOrder>();
-		Object valueObject = getMendixObject().getValue(context, MemberNames.UserContext_SalesOrder.toString());
-		if (valueObject == null)
-			return result;
-		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
-			result.add(testsimplelistwidget.proxies.SalesOrder.initialize(context, mendixObject));
+		testsimplelistwidget.proxies.SalesOrder result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.UserContext_SalesOrder.toString());
+		if (identifier != null)
+			result = testsimplelistwidget.proxies.SalesOrder.load(context, identifier);
 		return result;
 	}
 
@@ -1380,7 +428,7 @@ public class UserContext
 	 * Set value of UserContext_SalesOrder
 	 * @param usercontext_salesorder
 	 */
-	public final void setUserContext_SalesOrder(java.util.List<testsimplelistwidget.proxies.SalesOrder> usercontext_salesorder)
+	public final void setUserContext_SalesOrder(testsimplelistwidget.proxies.SalesOrder usercontext_salesorder)
 	{
 		setUserContext_SalesOrder(getContext(), usercontext_salesorder);
 	}
@@ -1390,12 +438,12 @@ public class UserContext
 	 * @param context
 	 * @param usercontext_salesorder
 	 */
-	public final void setUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<testsimplelistwidget.proxies.SalesOrder> usercontext_salesorder)
+	public final void setUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.SalesOrder usercontext_salesorder)
 	{
-		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
-		for (testsimplelistwidget.proxies.SalesOrder proxyObject : usercontext_salesorder)
-			identifiers.add(proxyObject.getMendixObject().getId());
-		getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder.toString(), identifiers);
+		if (usercontext_salesorder == null)
+			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder.toString(), usercontext_salesorder.getMendixObject().getId());
 	}
 
 	/**
