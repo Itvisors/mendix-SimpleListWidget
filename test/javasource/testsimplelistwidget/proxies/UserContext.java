@@ -23,11 +23,14 @@ public class UserContext
 		ContextGuid("ContextGuid"),
 		FromDate("FromDate"),
 		ToDate("ToDate"),
+		SplitPanePosition("SplitPanePosition"),
+		MoreData("MoreData"),
 		UserContext_SalesRepresentative("TestSimpleListWidget.UserContext_SalesRepresentative"),
 		UserContext_Location("TestSimpleListWidget.UserContext_Location"),
 		UserContext_Customer("TestSimpleListWidget.UserContext_Customer"),
 		UserContext_Item("TestSimpleListWidget.UserContext_Item"),
-		UserContext_SalesOrder("TestSimpleListWidget.UserContext_SalesOrder"),
+		UserContext_SalesOrder_Selected("TestSimpleListWidget.UserContext_SalesOrder_Selected"),
+		UserContext_SalesOrder_List("TestSimpleListWidget.UserContext_SalesOrder_List"),
 		UserContext_Session("TestSimpleListWidget.UserContext_Session");
 
 		private java.lang.String metaName;
@@ -232,6 +235,78 @@ public class UserContext
 	}
 
 	/**
+	 * @return value of SplitPanePosition
+	 */
+	public final java.lang.Integer getSplitPanePosition()
+	{
+		return getSplitPanePosition(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of SplitPanePosition
+	 */
+	public final java.lang.Integer getSplitPanePosition(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.SplitPanePosition.toString());
+	}
+
+	/**
+	 * Set value of SplitPanePosition
+	 * @param splitpaneposition
+	 */
+	public final void setSplitPanePosition(java.lang.Integer splitpaneposition)
+	{
+		setSplitPanePosition(getContext(), splitpaneposition);
+	}
+
+	/**
+	 * Set value of SplitPanePosition
+	 * @param context
+	 * @param splitpaneposition
+	 */
+	public final void setSplitPanePosition(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer splitpaneposition)
+	{
+		getMendixObject().setValue(context, MemberNames.SplitPanePosition.toString(), splitpaneposition);
+	}
+
+	/**
+	 * @return value of MoreData
+	 */
+	public final java.lang.Boolean getMoreData()
+	{
+		return getMoreData(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of MoreData
+	 */
+	public final java.lang.Boolean getMoreData(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.MoreData.toString());
+	}
+
+	/**
+	 * Set value of MoreData
+	 * @param moredata
+	 */
+	public final void setMoreData(java.lang.Boolean moredata)
+	{
+		setMoreData(getContext(), moredata);
+	}
+
+	/**
+	 * Set value of MoreData
+	 * @param context
+	 * @param moredata
+	 */
+	public final void setMoreData(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean moredata)
+	{
+		getMendixObject().setValue(context, MemberNames.MoreData.toString(), moredata);
+	}
+
+	/**
 	 * @return value of UserContext_SalesRepresentative
 	 */
 	public final testsimplelistwidget.proxies.SalesRepresentative getUserContext_SalesRepresentative() throws com.mendix.core.CoreException
@@ -404,46 +479,92 @@ public class UserContext
 	}
 
 	/**
-	 * @return value of UserContext_SalesOrder
+	 * @return value of UserContext_SalesOrder_Selected
 	 */
-	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder() throws com.mendix.core.CoreException
+	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder_Selected() throws com.mendix.core.CoreException
 	{
-		return getUserContext_SalesOrder(getContext());
+		return getUserContext_SalesOrder_Selected(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of UserContext_SalesOrder
+	 * @return value of UserContext_SalesOrder_Selected
 	 */
-	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	public final testsimplelistwidget.proxies.SalesOrder getUserContext_SalesOrder_Selected(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		testsimplelistwidget.proxies.SalesOrder result = null;
-		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.UserContext_SalesOrder.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.UserContext_SalesOrder_Selected.toString());
 		if (identifier != null)
 			result = testsimplelistwidget.proxies.SalesOrder.load(context, identifier);
 		return result;
 	}
 
 	/**
-	 * Set value of UserContext_SalesOrder
-	 * @param usercontext_salesorder
+	 * Set value of UserContext_SalesOrder_Selected
+	 * @param usercontext_salesorder_selected
 	 */
-	public final void setUserContext_SalesOrder(testsimplelistwidget.proxies.SalesOrder usercontext_salesorder)
+	public final void setUserContext_SalesOrder_Selected(testsimplelistwidget.proxies.SalesOrder usercontext_salesorder_selected)
 	{
-		setUserContext_SalesOrder(getContext(), usercontext_salesorder);
+		setUserContext_SalesOrder_Selected(getContext(), usercontext_salesorder_selected);
 	}
 
 	/**
-	 * Set value of UserContext_SalesOrder
+	 * Set value of UserContext_SalesOrder_Selected
 	 * @param context
-	 * @param usercontext_salesorder
+	 * @param usercontext_salesorder_selected
 	 */
-	public final void setUserContext_SalesOrder(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.SalesOrder usercontext_salesorder)
+	public final void setUserContext_SalesOrder_Selected(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.SalesOrder usercontext_salesorder_selected)
 	{
-		if (usercontext_salesorder == null)
-			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder.toString(), null);
+		if (usercontext_salesorder_selected == null)
+			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder_Selected.toString(), null);
 		else
-			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder.toString(), usercontext_salesorder.getMendixObject().getId());
+			getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder_Selected.toString(), usercontext_salesorder_selected.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of UserContext_SalesOrder_List
+	 */
+	public final java.util.List<testsimplelistwidget.proxies.SalesOrder> getUserContext_SalesOrder_List() throws com.mendix.core.CoreException
+	{
+		return getUserContext_SalesOrder_List(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of UserContext_SalesOrder_List
+	 */
+	@SuppressWarnings("unchecked")
+	public final java.util.List<testsimplelistwidget.proxies.SalesOrder> getUserContext_SalesOrder_List(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		java.util.List<testsimplelistwidget.proxies.SalesOrder> result = new java.util.ArrayList<testsimplelistwidget.proxies.SalesOrder>();
+		Object valueObject = getMendixObject().getValue(context, MemberNames.UserContext_SalesOrder_List.toString());
+		if (valueObject == null)
+			return result;
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
+			result.add(testsimplelistwidget.proxies.SalesOrder.initialize(context, mendixObject));
+		return result;
+	}
+
+	/**
+	 * Set value of UserContext_SalesOrder_List
+	 * @param usercontext_salesorder_list
+	 */
+	public final void setUserContext_SalesOrder_List(java.util.List<testsimplelistwidget.proxies.SalesOrder> usercontext_salesorder_list)
+	{
+		setUserContext_SalesOrder_List(getContext(), usercontext_salesorder_list);
+	}
+
+	/**
+	 * Set value of UserContext_SalesOrder_List
+	 * @param context
+	 * @param usercontext_salesorder_list
+	 */
+	public final void setUserContext_SalesOrder_List(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<testsimplelistwidget.proxies.SalesOrder> usercontext_salesorder_list)
+	{
+		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
+		for (testsimplelistwidget.proxies.SalesOrder proxyObject : usercontext_salesorder_list)
+			identifiers.add(proxyObject.getMendixObject().getId());
+		getMendixObject().setValue(context, MemberNames.UserContext_SalesOrder_List.toString(), identifiers);
 	}
 
 	/**

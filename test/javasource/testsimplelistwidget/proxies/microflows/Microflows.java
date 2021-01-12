@@ -15,37 +15,40 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the TestSimpleListWidget module
-	public static void aCT_UserContext_SetActiveSalesOrder(IContext context, testsimplelistwidget.proxies.SalesOrder _salesOrder, testsimplelistwidget.proxies.UserContext _userContext)
-	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("SalesOrder", _salesOrder == null ? null : _salesOrder.getMendixObject());
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.ACT_UserContext_SetActiveSalesOrder").withParams(params).execute(context);
-	}
 	public static testsimplelistwidget.proxies.UserContext dS_UserContext(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		IMendixObject result = (IMendixObject)Core.microflowCall("TestSimpleListWidget.DS_UserContext").withParams(params).execute(context);
 		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, result);
 	}
-	public static java.util.List<testsimplelistwidget.proxies.SalesOrder> dSL_SalesOrder(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	public static void oCh_UserContext_Refresh(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		java.util.List<IMendixObject> objs = Core.microflowCall("TestSimpleListWidget.DSL_SalesOrder").withParams(params).execute(context);
-		java.util.List<testsimplelistwidget.proxies.SalesOrder> result = null;
-		if (objs != null)
-		{
-			result = new java.util.ArrayList<>();
-			for (IMendixObject obj : objs)
-				result.add(testsimplelistwidget.proxies.SalesOrder.initialize(context, obj));
-		}
-		return result;
+		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_Refresh").withParams(params).execute(context);
+	}
+	public static void oCh_UserContext_SplitPosition(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
+		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_SplitPosition").withParams(params).execute(context);
 	}
 	public static testsimplelistwidget.proxies.UserContext sUB_UserContext_GetOrCreate(IContext context)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();
 		IMendixObject result = (IMendixObject)Core.microflowCall("TestSimpleListWidget.SUB_UserContext_GetOrCreate").withParams(params).execute(context);
 		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, result);
+	}
+	public static void sUB_UserContext_RefreshList(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
+		Core.microflowCall("TestSimpleListWidget.SUB_UserContext_RefreshList").withParams(params).execute(context);
+	}
+	public static boolean sUB_UserContext_Validate(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
+		return (java.lang.Boolean) Core.microflowCall("TestSimpleListWidget.SUB_UserContext_Validate").withParams(params).execute(context);
 	}
 }
