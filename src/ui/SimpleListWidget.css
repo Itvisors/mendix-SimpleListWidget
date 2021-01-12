@@ -1,6 +1,10 @@
 /*
 Place your custom CSS here
 */
-.widget-hello-world {
+div.simplelistwidget-lined div.simplelistwidget-item {
+    border-top: 1px solid #D7D7D7;
+}
 
+div.simplelistwidget-lined div.simplelistwidget-item:last-child {
+    border-bottom: 1px solid #D7D7D7;
 }
