@@ -20,7 +20,7 @@ public class UserContext
 	 */
 	public enum MemberNames
 	{
-		ContextGuid("ContextGuid"),
+		SelectedGuid("SelectedGuid"),
 		FromDate("FromDate"),
 		ToDate("ToDate"),
 		SplitPanePosition("SplitPanePosition"),
@@ -127,39 +127,39 @@ public class UserContext
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
-	 * @return value of ContextGuid
+	 * @return value of SelectedGuid
 	 */
-	public final java.lang.Long getContextGuid()
+	public final java.lang.String getSelectedGuid()
 	{
-		return getContextGuid(getContext());
+		return getSelectedGuid(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of ContextGuid
+	 * @return value of SelectedGuid
 	 */
-	public final java.lang.Long getContextGuid(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getSelectedGuid(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.ContextGuid.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.SelectedGuid.toString());
 	}
 
 	/**
-	 * Set value of ContextGuid
-	 * @param contextguid
+	 * Set value of SelectedGuid
+	 * @param selectedguid
 	 */
-	public final void setContextGuid(java.lang.Long contextguid)
+	public final void setSelectedGuid(java.lang.String selectedguid)
 	{
-		setContextGuid(getContext(), contextguid);
+		setSelectedGuid(getContext(), selectedguid);
 	}
 
 	/**
-	 * Set value of ContextGuid
+	 * Set value of SelectedGuid
 	 * @param context
-	 * @param contextguid
+	 * @param selectedguid
 	 */
-	public final void setContextGuid(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long contextguid)
+	public final void setSelectedGuid(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String selectedguid)
 	{
-		getMendixObject().setValue(context, MemberNames.ContextGuid.toString(), contextguid);
+		getMendixObject().setValue(context, MemberNames.SelectedGuid.toString(), selectedguid);
 	}
 
 	/**

@@ -4,7 +4,7 @@
  * @author Mendix UI Content Team
  */
 import { ComponentType, CSSProperties } from "react";
-import { ListValue, ListWidgetValue } from "mendix";
+import { EditableValue, ListValue, ListWidgetValue } from "mendix";
 
 export interface SimpleListWidgetContainerProps {
     name: string;
@@ -13,6 +13,7 @@ export interface SimpleListWidgetContainerProps {
     tabIndex: number;
     ds: ListValue;
     content: ListWidgetValue;
+    selectedItemGuidAttr?: EditableValue<string>;
 }
 
 export interface SimpleListWidgetPreviewProps {
@@ -20,4 +21,5 @@ export interface SimpleListWidgetPreviewProps {
     style: string;
     ds: {} | null;
     content: { widgetCount: number; renderer: ComponentType };
+    selectedItemGuidAttr: string;
 }

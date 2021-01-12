@@ -16,6 +16,13 @@
                 <caption>Content</caption>
                 <description></description>
             </property>
+            <property key="selectedItemGuidAttr" type="attribute" required="false">
+                <caption>Selected item GUID</caption>
+                <description>Set the GUID of the item you want to appear as selected here.</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

@@ -8,3 +8,7 @@ div.simplelistwidget-lined div.simplelistwidget-item {
 div.simplelistwidget-lined div.simplelistwidget-item:last-child {
     border-bottom: 1px solid #D7D7D7;
 }
+
+div.simplelistwidget-lined div.simplelistwidget-item.simplelistwidget-selected {
+    background-color: #F7F7F7;
+}
