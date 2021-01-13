@@ -4,6 +4,7 @@ import { ValueStatus } from "mendix";
 import { SimpleListWidgetContainerProps } from "../typings/SimpleListWidgetProps";
 
 import "./ui/SimpleListWidget.css";
+import { SimpleListItem } from "./components/SimpleListItem";
 
 export default class SimpleListWidget extends Component<SimpleListWidgetContainerProps> {
     render(): ReactNode {
@@ -11,19 +12,17 @@ export default class SimpleListWidget extends Component<SimpleListWidgetContaine
         if (!ds || ds.status !== ValueStatus.Available || !ds.items) {
             return null;
         }
-        const selectedItemGuid = selectedItemGuidAttr?.value;
         const containerClassName = "simplelistwidget " + this.props.class;
         return (
             <div className={containerClassName}>
-                {ds.items.map(item => {
-                    const selectedClassName = item.id === selectedItemGuid ? " simplelistwidget-selected" : "";
-                    const itemClassName = "simplelistwidget-item" + selectedClassName;
-                    return (
-                        <div className={itemClassName} key={item.id}>
-                            {content(item)}
-                        </div>
-                    );
-                })}
+                {ds.items.map(item => (
+                    <SimpleListItem
+                        key={item.id}
+                        item={item}
+                        selectedItemGuidAttr={selectedItemGuidAttr}
+                        content={content}
+                    />
+                ))}
             </div>
         );
     }
