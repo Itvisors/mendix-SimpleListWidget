@@ -6,10 +6,11 @@ declare function require(name: string): string;
 export class preview extends Component<SimpleListWidgetPreviewProps> {
     render(): ReactNode {
         const { content } = this.props;
+        const containerClassName = "simplelistwidget simplelistwidget-preview " + this.props.class;
         return (
-            <div>
+            <div className={containerClassName}>
                 <content.renderer>
-                    <div />
+                    <div className="simplelistwidget-item" />
                 </content.renderer>
             </div>
         );
