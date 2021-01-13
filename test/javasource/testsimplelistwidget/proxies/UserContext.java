@@ -21,6 +21,7 @@ public class UserContext
 	public enum MemberNames
 	{
 		SelectedGuid("SelectedGuid"),
+		ScrollIntoViewGuid("ScrollIntoViewGuid"),
 		FromDate("FromDate"),
 		ToDate("ToDate"),
 		SplitPanePosition("SplitPanePosition"),
@@ -160,6 +161,42 @@ public class UserContext
 	public final void setSelectedGuid(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String selectedguid)
 	{
 		getMendixObject().setValue(context, MemberNames.SelectedGuid.toString(), selectedguid);
+	}
+
+	/**
+	 * @return value of ScrollIntoViewGuid
+	 */
+	public final java.lang.String getScrollIntoViewGuid()
+	{
+		return getScrollIntoViewGuid(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of ScrollIntoViewGuid
+	 */
+	public final java.lang.String getScrollIntoViewGuid(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ScrollIntoViewGuid.toString());
+	}
+
+	/**
+	 * Set value of ScrollIntoViewGuid
+	 * @param scrollintoviewguid
+	 */
+	public final void setScrollIntoViewGuid(java.lang.String scrollintoviewguid)
+	{
+		setScrollIntoViewGuid(getContext(), scrollintoviewguid);
+	}
+
+	/**
+	 * Set value of ScrollIntoViewGuid
+	 * @param context
+	 * @param scrollintoviewguid
+	 */
+	public final void setScrollIntoViewGuid(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String scrollintoviewguid)
+	{
+		getMendixObject().setValue(context, MemberNames.ScrollIntoViewGuid.toString(), scrollintoviewguid);
 	}
 
 	/**

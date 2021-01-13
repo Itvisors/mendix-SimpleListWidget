@@ -14,6 +14,8 @@ export interface SimpleListWidgetContainerProps {
     ds: ListValue;
     content: ListWidgetValue;
     selectedItemGuidAttr?: EditableValue<string>;
+    scrollIntoViewGuidAttr?: EditableValue<string>;
+    scrollIntoViewDelay: number;
 }
 
 export interface SimpleListWidgetPreviewProps {
@@ -22,4 +24,6 @@ export interface SimpleListWidgetPreviewProps {
     ds: {} | null;
     content: { widgetCount: number; renderer: ComponentType };
     selectedItemGuidAttr: string;
+    scrollIntoViewGuidAttr: string;
+    scrollIntoViewDelay: number | null;
 }

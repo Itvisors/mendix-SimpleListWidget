@@ -24,6 +24,17 @@
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
+            <property key="scrollIntoViewGuidAttr" type="attribute" required="false">
+                <caption>Scroll into view GUID</caption>
+                <description>If the attribute has a value, the item with that value will be scrolled into view, to the top of the viewable area.</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="scrollIntoViewDelay" type="integer" defaultValue="100">
+                <caption>Scroll into view delay</caption>
+                <description>Wait time before scrolling the item into view. For complex pages (or old browsers) this might need to be increased.</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

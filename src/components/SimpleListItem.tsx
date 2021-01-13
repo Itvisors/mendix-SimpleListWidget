@@ -1,4 +1,4 @@
-import { createElement, ReactElement } from "react";
+import React, { createElement, ReactElement } from "react";
 import { EditableValue, ListWidgetValue, ObjectItem } from "mendix";
 
 export interface SimpleListItemProps {
@@ -7,15 +7,17 @@ export interface SimpleListItemProps {
     selectedItemGuidAttr?: EditableValue<string>;
 }
 
-export function SimpleListItem(props: SimpleListItemProps): ReactElement {
-    const { content, item, selectedItemGuidAttr } = props;
-    const selectedItemGuid = selectedItemGuidAttr?.value;
-    const isSelected = item.id === selectedItemGuid;
-    const selectedClassName = isSelected ? " simplelistwidget-selected" : "";
-    const itemClassName = "simplelistwidget-item" + selectedClassName;
-    return (
-        <div className={itemClassName} key={item.id}>
-            {content(item)}
-        </div>
-    );
-}
+export const SimpleListItem = React.forwardRef<HTMLDivElement, SimpleListItemProps>(
+    (props, ref): ReactElement => {
+        const { content, item, selectedItemGuidAttr } = props;
+        const selectedItemGuid = selectedItemGuidAttr?.value;
+        const isSelected = item.id === selectedItemGuid;
+        const selectedClassName = isSelected ? " simplelistwidget-selected" : "";
+        const itemClassName = "simplelistwidget-item" + selectedClassName;
+        return (
+            <div ref={isSelected ? ref : undefined} className={itemClassName} key={item.id}>
+                {content(item)}
+            </div>
+        );
+    }
+);
