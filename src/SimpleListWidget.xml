@@ -5,6 +5,7 @@
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Simple List Widget</name>
     <description>Simple list widget for use in pluggable widget containers</description>
+    <studioProCategory>Data containers</studioProCategory>
     <icon>iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAAAG0SURBVHhe7dmhTsNQFMbxbuEBEEhICAqBmOANCAJDMHgsEskz8AA8BCQkBDlBgp1AIFAEAgKBQCAQJOU7XddmaXa/u+DG/5ec9Rb5pbc9h9sry7LAbP36ihkIyCAgg4AMAjKar9hgY39FlwPVavWH/+tNdXP/dP0eN1VACmdT6ztVhISi+FTtKqTRZIudqQintayKTJp30FZ9RWsQP5OAHusrWg/xMwnoVPUxXkLiHXQSC75iXd2vGGajUTQICH/DO8hgixnVE9S7eF3S+ki1o/qpy3mpr4smGsRhebgWvVAT0JXW0QNhLJrmPYU06iucbd0QzrRoms9jEe+g9VigoxrgI6Bb1XfcYMoofvraZ7HfjlWE1PpSxQDf9kF6F8W+i8cqd8st6taMcC714DzHDY2iQaNoEJBBQAYBGQRkNF8x/ifd4GQ1AyerBierGThZNThZTeBkNYGT1XnQKBoEZBCQQUAGARl85rsYVjMwrBoMqxkYVg2G1QSG1QSG1XnQKBoEZBCQQUAGARl85rsYVjMwrBoMqxkYVg2G1QSG1QSG1XnQKBoEZBCQQUAGARkElFQUv8zswhDB1dPeAAAAAElFTkSuQmCC
     </icon>
     <properties>

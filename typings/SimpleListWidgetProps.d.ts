@@ -21,8 +21,8 @@ export interface SimpleListWidgetContainerProps {
 export interface SimpleListWidgetPreviewProps {
     class: string;
     style: string;
-    ds: {} | null;
-    content: { widgetCount: number; renderer: ComponentType<{caption?: string}> };
+    ds: {} | { type: string } | null;
+    content: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
     selectedItemGuidAttr: string;
     scrollIntoViewGuidAttr: string;
     scrollIntoViewDelay: number | null;
