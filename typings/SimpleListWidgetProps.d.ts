@@ -19,8 +19,10 @@ export interface SimpleListWidgetContainerProps {
 }
 
 export interface SimpleListWidgetPreviewProps {
-    class: string;
+    className: string;
     style: string;
+    styleObject?: CSSProperties;
+    readOnly: boolean;
     ds: {} | { type: string } | null;
     content: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
     selectedItemGuidAttr: string;
