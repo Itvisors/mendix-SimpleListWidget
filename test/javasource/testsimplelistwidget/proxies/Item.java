@@ -24,7 +24,7 @@ public class Item
 		RecordID("RecordID"),
 		Price("Price");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -40,15 +40,17 @@ public class Item
 
 	public Item(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "TestSimpleListWidget.Item"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected Item(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject itemMendixObject)
 	{
-		if (itemMendixObject == null)
+		if (itemMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("TestSimpleListWidget.Item", itemMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a TestSimpleListWidget.Item");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, itemMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.itemMendixObject = itemMendixObject;
 		this.context = context;
@@ -66,6 +68,9 @@ public class Item
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static testsimplelistwidget.proxies.Item initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -80,14 +85,16 @@ public class Item
 
 	public static java.util.List<testsimplelistwidget.proxies.Item> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<testsimplelistwidget.proxies.Item> result = new java.util.ArrayList<testsimplelistwidget.proxies.Item>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//TestSimpleListWidget.Item" + xpathConstraint))
-			result.add(testsimplelistwidget.proxies.Item.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> testsimplelistwidget.proxies.Item.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -96,6 +103,7 @@ public class Item
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -244,9 +252,9 @@ public class Item
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final testsimplelistwidget.proxies.Item that = (testsimplelistwidget.proxies.Item) obj;
@@ -266,7 +274,7 @@ public class Item
 	 */
 	public static java.lang.String getType()
 	{
-		return "TestSimpleListWidget.Item";
+		return entityName;
 	}
 
 	/**

@@ -29,7 +29,7 @@ public class SalesOrder
 		SalesOrder_Customer("TestSimpleListWidget.SalesOrder_Customer"),
 		SalesOrder_Item("TestSimpleListWidget.SalesOrder_Item");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -45,15 +45,17 @@ public class SalesOrder
 
 	public SalesOrder(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "TestSimpleListWidget.SalesOrder"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected SalesOrder(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject salesOrderMendixObject)
 	{
-		if (salesOrderMendixObject == null)
+		if (salesOrderMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("TestSimpleListWidget.SalesOrder", salesOrderMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a TestSimpleListWidget.SalesOrder");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, salesOrderMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.salesOrderMendixObject = salesOrderMendixObject;
 		this.context = context;
@@ -71,6 +73,9 @@ public class SalesOrder
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static testsimplelistwidget.proxies.SalesOrder initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -85,14 +90,16 @@ public class SalesOrder
 
 	public static java.util.List<testsimplelistwidget.proxies.SalesOrder> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<testsimplelistwidget.proxies.SalesOrder> result = new java.util.ArrayList<testsimplelistwidget.proxies.SalesOrder>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//TestSimpleListWidget.SalesOrder" + xpathConstraint))
-			result.add(testsimplelistwidget.proxies.SalesOrder.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> testsimplelistwidget.proxies.SalesOrder.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -101,6 +108,7 @@ public class SalesOrder
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -138,9 +146,9 @@ public class SalesOrder
 	public final testsimplelistwidget.proxies.Region getRegion(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Region.toString());
-		if (obj == null)
+		if (obj == null) {
 			return null;
-
+		}
 		return testsimplelistwidget.proxies.Region.valueOf((java.lang.String) obj);
 	}
 
@@ -160,10 +168,11 @@ public class SalesOrder
 	 */
 	public final void setRegion(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.Region region)
 	{
-		if (region != null)
+		if (region != null) {
 			getMendixObject().setValue(context, MemberNames.Region.toString(), region.toString());
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.Region.toString(), null);
+		}
 	}
 
 	/**
@@ -275,6 +284,7 @@ public class SalesOrder
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of SalesOrder_SalesRepresentative
 	 */
 	public final testsimplelistwidget.proxies.SalesRepresentative getSalesOrder_SalesRepresentative() throws com.mendix.core.CoreException
@@ -285,13 +295,15 @@ public class SalesOrder
 	/**
 	 * @param context
 	 * @return value of SalesOrder_SalesRepresentative
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final testsimplelistwidget.proxies.SalesRepresentative getSalesOrder_SalesRepresentative(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		testsimplelistwidget.proxies.SalesRepresentative result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.SalesOrder_SalesRepresentative.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = testsimplelistwidget.proxies.SalesRepresentative.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -311,13 +323,15 @@ public class SalesOrder
 	 */
 	public final void setSalesOrder_SalesRepresentative(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.SalesRepresentative salesorder_salesrepresentative)
 	{
-		if (salesorder_salesrepresentative == null)
+		if (salesorder_salesrepresentative == null) {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_SalesRepresentative.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_SalesRepresentative.toString(), salesorder_salesrepresentative.getMendixObject().getId());
+		}
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of SalesOrder_Location
 	 */
 	public final testsimplelistwidget.proxies.Location getSalesOrder_Location() throws com.mendix.core.CoreException
@@ -328,13 +342,15 @@ public class SalesOrder
 	/**
 	 * @param context
 	 * @return value of SalesOrder_Location
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final testsimplelistwidget.proxies.Location getSalesOrder_Location(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		testsimplelistwidget.proxies.Location result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.SalesOrder_Location.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = testsimplelistwidget.proxies.Location.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -354,13 +370,15 @@ public class SalesOrder
 	 */
 	public final void setSalesOrder_Location(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.Location salesorder_location)
 	{
-		if (salesorder_location == null)
+		if (salesorder_location == null) {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Location.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Location.toString(), salesorder_location.getMendixObject().getId());
+		}
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of SalesOrder_Customer
 	 */
 	public final testsimplelistwidget.proxies.Customer getSalesOrder_Customer() throws com.mendix.core.CoreException
@@ -371,13 +389,15 @@ public class SalesOrder
 	/**
 	 * @param context
 	 * @return value of SalesOrder_Customer
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final testsimplelistwidget.proxies.Customer getSalesOrder_Customer(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		testsimplelistwidget.proxies.Customer result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.SalesOrder_Customer.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = testsimplelistwidget.proxies.Customer.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -397,13 +417,15 @@ public class SalesOrder
 	 */
 	public final void setSalesOrder_Customer(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.Customer salesorder_customer)
 	{
-		if (salesorder_customer == null)
+		if (salesorder_customer == null) {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Customer.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Customer.toString(), salesorder_customer.getMendixObject().getId());
+		}
 	}
 
 	/**
+	 * @throws com.mendix.core.CoreException
 	 * @return value of SalesOrder_Item
 	 */
 	public final testsimplelistwidget.proxies.Item getSalesOrder_Item() throws com.mendix.core.CoreException
@@ -414,13 +436,15 @@ public class SalesOrder
 	/**
 	 * @param context
 	 * @return value of SalesOrder_Item
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final testsimplelistwidget.proxies.Item getSalesOrder_Item(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		testsimplelistwidget.proxies.Item result = null;
 		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.SalesOrder_Item.toString());
-		if (identifier != null)
+		if (identifier != null) {
 			result = testsimplelistwidget.proxies.Item.load(context, identifier);
+		}
 		return result;
 	}
 
@@ -440,10 +464,11 @@ public class SalesOrder
 	 */
 	public final void setSalesOrder_Item(com.mendix.systemwideinterfaces.core.IContext context, testsimplelistwidget.proxies.Item salesorder_item)
 	{
-		if (salesorder_item == null)
+		if (salesorder_item == null) {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Item.toString(), null);
-		else
+		} else {
 			getMendixObject().setValue(context, MemberNames.SalesOrder_Item.toString(), salesorder_item.getMendixObject().getId());
+		}
 	}
 
 	/**
@@ -465,9 +490,9 @@ public class SalesOrder
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final testsimplelistwidget.proxies.SalesOrder that = (testsimplelistwidget.proxies.SalesOrder) obj;
@@ -487,7 +512,7 @@ public class SalesOrder
 	 */
 	public static java.lang.String getType()
 	{
-		return "TestSimpleListWidget.SalesOrder";
+		return entityName;
 	}
 
 	/**

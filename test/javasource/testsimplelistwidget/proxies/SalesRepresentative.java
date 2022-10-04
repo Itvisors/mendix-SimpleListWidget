@@ -23,7 +23,7 @@ public class SalesRepresentative
 		Name("Name"),
 		RecordID("RecordID");
 
-		private java.lang.String metaName;
+		private final java.lang.String metaName;
 
 		MemberNames(java.lang.String s)
 		{
@@ -39,15 +39,17 @@ public class SalesRepresentative
 
 	public SalesRepresentative(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "TestSimpleListWidget.SalesRepresentative"));
+		this(context, com.mendix.core.Core.instantiate(context, entityName));
 	}
 
 	protected SalesRepresentative(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject salesRepresentativeMendixObject)
 	{
-		if (salesRepresentativeMendixObject == null)
+		if (salesRepresentativeMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("TestSimpleListWidget.SalesRepresentative", salesRepresentativeMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a TestSimpleListWidget.SalesRepresentative");
+		}
+		if (!com.mendix.core.Core.isSubClassOf(entityName, salesRepresentativeMendixObject.getType())) {
+			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
+		}	
 
 		this.salesRepresentativeMendixObject = salesRepresentativeMendixObject;
 		this.context = context;
@@ -65,6 +67,9 @@ public class SalesRepresentative
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
+	 * @param context The context to be used
+	 * @param mendixObject The Mendix object for the new instance
+	 * @return a new instance of this proxy class
 	 */
 	public static testsimplelistwidget.proxies.SalesRepresentative initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -79,14 +84,16 @@ public class SalesRepresentative
 
 	public static java.util.List<testsimplelistwidget.proxies.SalesRepresentative> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
-		java.util.List<testsimplelistwidget.proxies.SalesRepresentative> result = new java.util.ArrayList<testsimplelistwidget.proxies.SalesRepresentative>();
-		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//TestSimpleListWidget.SalesRepresentative" + xpathConstraint))
-			result.add(testsimplelistwidget.proxies.SalesRepresentative.initialize(context, obj));
-		return result;
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> testsimplelistwidget.proxies.SalesRepresentative.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit() throws com.mendix.core.CoreException
 	{
@@ -95,6 +102,7 @@ public class SalesRepresentative
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
+	 * @throws com.mendix.core.CoreException
 	 */
 	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
@@ -207,9 +215,9 @@ public class SalesRepresentative
 	@java.lang.Override
 	public boolean equals(Object obj)
 	{
-		if (obj == this)
+		if (obj == this) {
 			return true;
-
+		}
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
 			final testsimplelistwidget.proxies.SalesRepresentative that = (testsimplelistwidget.proxies.SalesRepresentative) obj;
@@ -229,7 +237,7 @@ public class SalesRepresentative
 	 */
 	public static java.lang.String getType()
 	{
-		return "TestSimpleListWidget.SalesRepresentative";
+		return entityName;
 	}
 
 	/**
