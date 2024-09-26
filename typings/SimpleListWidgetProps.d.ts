@@ -1,9 +1,9 @@
 /**
  * This file was generated from SimpleListWidget.xml
  * WARNING: All changes made to this file will be overwritten
- * @author Mendix UI Content Team
+ * @author Mendix Widgets Framework Team
  */
-import { ComponentType, CSSProperties } from "react";
+import { ComponentType, CSSProperties, ReactNode } from "react";
 import { EditableValue, ListValue, ListWidgetValue } from "mendix";
 
 export interface SimpleListWidgetContainerProps {
@@ -19,12 +19,17 @@ export interface SimpleListWidgetContainerProps {
 }
 
 export interface SimpleListWidgetPreviewProps {
+    /**
+     * @deprecated Deprecated since version 9.18.0. Please use class property instead.
+     */
     className: string;
+    class: string;
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    ds: {} | { type: string } | null;
-    content: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
+    renderMode?: "design" | "xray" | "structure";
+    ds: {} | { caption: string } | { type: string } | null;
+    content: { widgetCount: number; renderer: ComponentType<{ children: ReactNode; caption?: string }> };
     selectedItemGuidAttr: string;
     scrollIntoViewGuidAttr: string;
     scrollIntoViewDelay: number | null;

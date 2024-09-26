@@ -6,7 +6,6 @@ public class UserActionsRegistrar
 {
   public void registerActions(IActionRegistrator registrator)
   {
-    registrator.bundleComponentLoaded();
     registrator.registerUserAction(communitycommons.actions.Base64Decode.class);
     registrator.registerUserAction(communitycommons.actions.Base64DecodeToFile.class);
     registrator.registerUserAction(communitycommons.actions.Base64Encode.class);
@@ -70,6 +69,7 @@ public class UserActionsRegistrar
     registrator.registerUserAction(communitycommons.actions.RandomHash.class);
     registrator.registerUserAction(communitycommons.actions.RandomString.class);
     registrator.registerUserAction(communitycommons.actions.RandomStrongPassword.class);
+    registrator.registerUserAction(communitycommons.actions.RandomStrongPasswordWithLowercase.class);
     registrator.registerUserAction(communitycommons.actions.recommitInBatches.class);
     registrator.registerUserAction(communitycommons.actions.refreshClass.class);
     registrator.registerUserAction(communitycommons.actions.refreshClassByObject.class);
@@ -99,6 +99,8 @@ public class UserActionsRegistrar
     registrator.registerUserAction(communitycommons.actions.TimeMeasureStart.class);
     registrator.registerUserAction(communitycommons.actions.XSSSanitize.class);
     registrator.registerUserAction(communitycommons.actions.YearsBetween.class);
+    registrator.registerUserAction(feedbackmodule.actions.ValidateEmail.class);
+    registrator.registerUserAction(feedbackmodule.actions.XSS_Sanitizer.class);
     registrator.registerUserAction(system.actions.VerifyPassword.class);
   }
 }

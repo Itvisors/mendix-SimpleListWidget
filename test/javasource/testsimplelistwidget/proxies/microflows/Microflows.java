@@ -4,69 +4,153 @@
 
 package testsimplelistwidget.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the TestSimpleListWidget module
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_UserContextBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.DS_UserContext");
+		return builder;
+	}
+
 	public static testsimplelistwidget.proxies.UserContext dS_UserContext(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("TestSimpleListWidget.DS_UserContext").withParams(params).execute(context);
-		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, result);
+		Object result = dS_UserContextBuilder().execute(context);
+		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, (IMendixObject) result);
 	}
-	public static void oCh_UserContext_FromDate(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder oCh_UserContext_FromDateBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_FromDate").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.OCh_UserContext_FromDate");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
 	}
-	public static void oCh_UserContext_Refresh(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+
+	public static void oCh_UserContext_FromDate(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_Refresh").withParams(params).execute(context);
+		oCh_UserContext_FromDateBuilder(
+				_userContext
+			)
+			.execute(context);
 	}
-	public static void oCh_UserContext_SplitPosition(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder oCh_UserContext_RefreshBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_SplitPosition").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.OCh_UserContext_Refresh");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
 	}
-	public static void oCh_UserContext_ToDate(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+
+	public static void oCh_UserContext_Refresh(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.OCh_UserContext_ToDate").withParams(params).execute(context);
+		oCh_UserContext_RefreshBuilder(
+				_userContext
+			)
+			.execute(context);
 	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder oCh_UserContext_SplitPositionBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.OCh_UserContext_SplitPosition");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
+	}
+
+	public static void oCh_UserContext_SplitPosition(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		oCh_UserContext_SplitPositionBuilder(
+				_userContext
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder oCh_UserContext_ToDateBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.OCh_UserContext_ToDate");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
+	}
+
+	public static void oCh_UserContext_ToDate(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		oCh_UserContext_ToDateBuilder(
+				_userContext
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder sUB_UserContext_GetOrCreateBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.SUB_UserContext_GetOrCreate");
+		return builder;
+	}
+
 	public static testsimplelistwidget.proxies.UserContext sUB_UserContext_GetOrCreate(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("TestSimpleListWidget.SUB_UserContext_GetOrCreate").withParams(params).execute(context);
-		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, result);
+		Object result = sUB_UserContext_GetOrCreateBuilder().execute(context);
+		return result == null ? null : testsimplelistwidget.proxies.UserContext.initialize(context, (IMendixObject) result);
 	}
-	public static void sUB_UserContext_RefreshList(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder sUB_UserContext_RefreshListBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		Core.microflowCall("TestSimpleListWidget.SUB_UserContext_RefreshList").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.SUB_UserContext_RefreshList");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
 	}
-	public static boolean sUB_UserContext_Validate(IContext context, testsimplelistwidget.proxies.UserContext _userContext)
+
+	public static void sUB_UserContext_RefreshList(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("UserContext", _userContext == null ? null : _userContext.getMendixObject());
-		return (java.lang.Boolean) Core.microflowCall("TestSimpleListWidget.SUB_UserContext_Validate").withParams(params).execute(context);
+		sUB_UserContext_RefreshListBuilder(
+				_userContext
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder sUB_UserContext_ValidateBuilder(
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("TestSimpleListWidget.SUB_UserContext_Validate");
+		builder = builder.withParam("UserContext", _userContext);
+		return builder;
+	}
+
+	public static boolean sUB_UserContext_Validate(
+		IContext context,
+		testsimplelistwidget.proxies.UserContext _userContext
+	)
+	{
+		Object result = sUB_UserContext_ValidateBuilder(
+				_userContext
+			)
+			.execute(context);
+		return (boolean) result;
 	}
 }
