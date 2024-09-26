@@ -1,8 +1,6 @@
 ## SimpleListWidget
 Simple list widget for use in pluggable widget containers and master/detail scenario's.
 
-Originally created because currently listviews may not be put in pluggable widget containers. This widget is also quite useful in other situations as it allows you to control the selected item.
-
 ## Features
 - Renders a simple list of divs 
 - Set and indicate the selected item
@@ -25,7 +23,7 @@ It is easiest to put a container in the widget's content area, you can make that
 ## Setting the selected item
 The widget will put class `simplelistwidget-selected` on the item for which the GUID matches the value of the selected item GUID attribute. No error is given if that object does not exist in the list.
 
-Pluggable widgets do not support the 'listen-to' functionality, so set an association from your context object to the list entity and use that to show a dataview with the selected object.
+So set an association from your context object to the list entity and use that to show a dataview with the selected object.
 
 Note that if you're only setting the selected object association and GUID on your context object, you may do so using a nanoflow. If you don't commit, it saves you a server roundtrip, making the UI appear more responsive.
 
