@@ -99,8 +99,6 @@ public class UserActionsRegistrar
     registrator.registerUserAction(communitycommons.actions.TimeMeasureStart.class);
     registrator.registerUserAction(communitycommons.actions.XSSSanitize.class);
     registrator.registerUserAction(communitycommons.actions.YearsBetween.class);
-    registrator.registerUserAction(feedbackmodule.actions.ValidateEmail.class);
-    registrator.registerUserAction(feedbackmodule.actions.XSS_Sanitizer.class);
     registrator.registerUserAction(system.actions.VerifyPassword.class);
   }
 }
