@@ -1,7 +1,7 @@
 {
   "name": "simplelistwidget",
   "widgetName": "SimpleListWidget",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Simple list widget for use in pluggable widget containers",
   "copyright": "ITvisors 2021",
   "author": "Marcel Groeneweg",
