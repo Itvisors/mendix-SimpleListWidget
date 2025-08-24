@@ -6,28 +6,26 @@ package testsimplelistwidget.proxies;
 
 public enum AxisType
 {
-	SalesRepresentative(new java.lang.String[][] { new java.lang.String[] { "en_US", "Sales representative" } }),
-	Location(new java.lang.String[][] { new java.lang.String[] { "en_US", "Location" } }),
-	Customer(new java.lang.String[][] { new java.lang.String[] { "en_US", "Customer" } }),
-	Item(new java.lang.String[][] { new java.lang.String[] { "en_US", "Item" } });
+	SalesRepresentative("90b70a8d-8d9e-4d31-88e3-180d825a5077"),
+	Location("56c178c7-210e-4ba1-be8e-3b38022f6e1f"),
+	Customer("371f24c1-ec31-4648-a964-eea09a6ff9cf"),
+	Item("75b1be53-4e05-4fb2-94d4-6bf5a45d1792");
 
-	private final java.util.Map<java.lang.String, java.lang.String> captions;
-
-	private AxisType(java.lang.String[][] captionStrings)
+	private final java.lang.String i18nCaptionKey;
+	
+	private AxisType(java.lang.String i18nCaptionKey)
 	{
-		this.captions = new java.util.HashMap<>();
-		for (java.lang.String[] captionString : captionStrings) {
-			captions.put(captionString[0], captionString[1]);
-		}
+		this.i18nCaptionKey = i18nCaptionKey;
 	}
 
 	public java.lang.String getCaption(java.lang.String languageCode)
 	{
-		return captions.getOrDefault(languageCode, "en_US");
+		String caption = com.mendix.core.Core.getInternationalizedString(languageCode, i18nCaptionKey);
+		return caption.isEmpty() ? getCaption() : caption;
 	}
 
 	public java.lang.String getCaption()
 	{
-		return captions.get("en_US");
+		return com.mendix.core.Core.getInternationalizedString("en_US", i18nCaptionKey);
 	}
 }

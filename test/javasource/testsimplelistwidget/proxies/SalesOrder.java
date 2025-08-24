@@ -53,7 +53,7 @@ public class SalesOrder implements com.mendix.systemwideinterfaces.core.IEntityP
 		if (salesOrderMendixObject == null) {
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
 		}
-		if (!com.mendix.core.Core.isSubClassOf(entityName, salesOrderMendixObject.getType())) {
+		if (!salesOrderMendixObject.isInstanceOf(entityName)) {
 			throw new java.lang.IllegalArgumentException(String.format("The given object is not a %s", entityName));
 		}	
 

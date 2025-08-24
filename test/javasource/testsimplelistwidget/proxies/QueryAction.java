@@ -6,29 +6,27 @@ package testsimplelistwidget.proxies;
 
 public enum QueryAction
 {
-	count(new java.lang.String[][] { new java.lang.String[] { "en_US", "count" } }),
-	total_quantity(new java.lang.String[][] { new java.lang.String[] { "en_US", "total quantity" } }),
-	total_amount(new java.lang.String[][] { new java.lang.String[] { "en_US", "total amount" } }),
-	list_quantities(new java.lang.String[][] { new java.lang.String[] { "en_US", "list quantities" } }),
-	list_amounts(new java.lang.String[][] { new java.lang.String[] { "en_US", "list amounts" } });
+	count("f400ddb6-017f-4a39-a516-8b8ea888fee9"),
+	total_quantity("b560ab3f-7d3e-4c07-9668-a551a0014826"),
+	total_amount("00ecf25f-7903-4312-9a4c-9d3ae79bae49"),
+	list_quantities("55ce844f-dec0-4d45-ad6e-57f7eb6f88a7"),
+	list_amounts("70f126a7-d3d6-4bd6-acc1-cf8609f80183");
 
-	private final java.util.Map<java.lang.String, java.lang.String> captions;
-
-	private QueryAction(java.lang.String[][] captionStrings)
+	private final java.lang.String i18nCaptionKey;
+	
+	private QueryAction(java.lang.String i18nCaptionKey)
 	{
-		this.captions = new java.util.HashMap<>();
-		for (java.lang.String[] captionString : captionStrings) {
-			captions.put(captionString[0], captionString[1]);
-		}
+		this.i18nCaptionKey = i18nCaptionKey;
 	}
 
 	public java.lang.String getCaption(java.lang.String languageCode)
 	{
-		return captions.getOrDefault(languageCode, "en_US");
+		String caption = com.mendix.core.Core.getInternationalizedString(languageCode, i18nCaptionKey);
+		return caption.isEmpty() ? getCaption() : caption;
 	}
 
 	public java.lang.String getCaption()
 	{
-		return captions.get("en_US");
+		return com.mendix.core.Core.getInternationalizedString("en_US", i18nCaptionKey);
 	}
 }

@@ -6,28 +6,26 @@ package nanoflowcommons.proxies;
 
 public enum GeocodingProvider
 {
-	Google(new java.lang.String[][] { new java.lang.String[] { "en_US", "Google" } }),
-	Geocodio(new java.lang.String[][] { new java.lang.String[] { "en_US", "Geocodio" } }),
-	LocationIQ(new java.lang.String[][] { new java.lang.String[] { "en_US", "LocationIQ" } }),
-	MapQuest(new java.lang.String[][] { new java.lang.String[] { "en_US", "MapQuest" } });
+	Google("b6a87b4e-d53a-41bd-bc95-da918ce0d900"),
+	Geocodio("5250c6e2-c87c-47b2-8c26-40506f413092"),
+	LocationIQ("943186a6-a1d9-49bf-b81a-98edc45ee499"),
+	MapQuest("27ec0657-21ab-44a0-a2a1-5b28e62ce5d6");
 
-	private final java.util.Map<java.lang.String, java.lang.String> captions;
-
-	private GeocodingProvider(java.lang.String[][] captionStrings)
+	private final java.lang.String i18nCaptionKey;
+	
+	private GeocodingProvider(java.lang.String i18nCaptionKey)
 	{
-		this.captions = new java.util.HashMap<>();
-		for (java.lang.String[] captionString : captionStrings) {
-			captions.put(captionString[0], captionString[1]);
-		}
+		this.i18nCaptionKey = i18nCaptionKey;
 	}
 
 	public java.lang.String getCaption(java.lang.String languageCode)
 	{
-		return captions.getOrDefault(languageCode, "en_US");
+		String caption = com.mendix.core.Core.getInternationalizedString(languageCode, i18nCaptionKey);
+		return caption.isEmpty() ? getCaption() : caption;
 	}
 
 	public java.lang.String getCaption()
 	{
-		return captions.get("en_US");
+		return com.mendix.core.Core.getInternationalizedString("en_US", i18nCaptionKey);
 	}
 }
