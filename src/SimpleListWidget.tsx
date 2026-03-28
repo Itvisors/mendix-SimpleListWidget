@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, createElement } from "react";
+import React, { Component, ReactNode } from "react";
 import { ValueStatus } from "mendix";
 
 import { SimpleListWidgetContainerProps } from "../typings/SimpleListWidgetProps";

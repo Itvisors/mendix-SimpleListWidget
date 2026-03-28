@@ -1,4 +1,4 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode } from "react";
 import { SimpleListWidgetPreviewProps } from "../typings/SimpleListWidgetProps";
 
 declare function require(name: string): string;
