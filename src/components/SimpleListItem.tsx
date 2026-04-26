@@ -1,4 +1,4 @@
-import React, {  ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { EditableValue, ListWidgetValue, ObjectItem } from "mendix";
 
 export interface SimpleListItemProps {
